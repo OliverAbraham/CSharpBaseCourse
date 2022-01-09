@@ -27,15 +27,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10_Environment_variables", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11_files_and_directories", "11_files_and_directories\11_files_and_directories.csproj", "{80CD5B00-A103-4599-ABCB-45B3AB1E548C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_Classes_and_interfaces", "12_Classes_and_interfaces\12_Classes_and_interfaces.csproj", "{2F0192B1-3BA5-4CC3-A97A-3A98192FF17D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_Classes_and_interfaces", "12_Classes_and_interfaces\12_Classes_and_interfaces.csproj", "{2F0192B1-3BA5-4CC3-A97A-3A98192FF17D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13_Delegates_and_lambdas", "13_Delegates_and_lambdas\13_Delegates_and_lambdas.csproj", "{2BB26CC1-E827-4639-A1C0-60606E47AC2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "13_Delegates_and_lambdas", "13_Delegates_and_lambdas\13_Delegates_and_lambdas.csproj", "{2BB26CC1-E827-4639-A1C0-60606E47AC2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14_IEnumerable_IQueryable_IList_LINQ", "14_IEnumerable_IQueryable_IList_LINQ\14_IEnumerable_IQueryable_IList_LINQ.csproj", "{880CCBE1-43BF-4CB0-9D47-92172B37EC78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "14_IEnumerable_IQueryable_IList_LINQ", "14_IEnumerable_IQueryable_IList_LINQ\14_IEnumerable_IQueryable_IList_LINQ.csproj", "{880CCBE1-43BF-4CB0-9D47-92172B37EC78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15_Generics", "15_Generics\15_Generics.csproj", "{76358158-AF32-4AB5-9939-E6CF8E62462C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "15_Generics", "15_Generics\15_Generics.csproj", "{76358158-AF32-4AB5-9939-E6CF8E62462C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16_Codepages_Encoding_Unicode", "16_Codepages_Encoding_Unicode\16_Codepages_Encoding_Unicode.csproj", "{26958F74-2D9B-4213-B461-79D6769241FF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{5998EA4A-6B8D-48D5-A3AC-3C30E5FB866D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -107,10 +110,6 @@ Global
 		{76358158-AF32-4AB5-9939-E6CF8E62462C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76358158-AF32-4AB5-9939-E6CF8E62462C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76358158-AF32-4AB5-9939-E6CF8E62462C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{26958F74-2D9B-4213-B461-79D6769241FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26958F74-2D9B-4213-B461-79D6769241FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26958F74-2D9B-4213-B461-79D6769241FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26958F74-2D9B-4213-B461-79D6769241FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
