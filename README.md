@@ -1,5 +1,7 @@
 # CSharpBaseCourse example code
 
+This repository contains several demo programs from my C# Pro Course.
+
 ## Hello World
 	• 01_HelloWorld
 	• 02_HelloWorld
