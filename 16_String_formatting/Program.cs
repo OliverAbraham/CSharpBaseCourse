@@ -32,4 +32,20 @@ Console.WriteLine($"komplett kurz                    : |{heute:f}|");
 Console.WriteLine($"komplett lang                    : |{heute:F}|");
 Console.WriteLine($"Individuell                      : |{heute:yyyy_MM_dd___HH_mm_ss}|");
 Console.WriteLine($"Timestamp-Format für Logs        : |{heute:yyyy-MM-dd HH:mm:ss fff}|");
+
+
+
+
+Console.WriteLine($"\nThese are the three variants of formatting:");
+Console.WriteLine("  - variant1: $\" . . . {variable,Format} . . . \"");
+Console.WriteLine("  - variant2: string.Format(Format, variable)");
+Console.WriteLine("  - variant3: variable.ToString(Format)");
+
+var variable = 1234567.89m;
+var format   = "N2";
+
+var variant1 = $" . . . {variable:N3} . . . ";
+var variant2 = string.Format("{0:N2}", variable);
+var variant3 = variable.ToString(format);
+
 Console.ReadKey();
