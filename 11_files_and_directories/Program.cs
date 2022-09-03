@@ -20,6 +20,7 @@ var path2 = Path.GetTempFileName();
 
 // combine two paths
 var completePath = Path.Combine(path1, path2);
+//completePath = Path.Combine("C:", "dies", "sind", "verzeichnisse", "und eine dateiname.txt");
 
 Console.WriteLine($"Temporary filename   : {completePath}");
 
@@ -27,10 +28,14 @@ Console.WriteLine($"Temporary filename   : {completePath}");
 
 // Create a file
 File.WriteAllText(completePath, "Hello world!");
+File.AppendAllText(completePath, "Hello Dieter");
 
 // read file again
 var contents = File.ReadAllText(completePath);
 Console.WriteLine($"Contents of temporary file is  : {contents}");
+
+contents = contents.Replace("Hello", "Moin");
+File.WriteAllText(completePath, contents);
 
 // rename the file
 var newFilename = completePath + ".bak";

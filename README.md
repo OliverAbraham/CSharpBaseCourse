@@ -1,31 +1,24 @@
 # CSharpBaseCourse example code
 
-This repository contains several demo programs from my C# Pro Course.
+This repository contains several demo programs from my C# Base Course.
 
 ## Hello World
-	• 01_HelloWorld
-	• 02_HelloWorld
-	• 03_Basic_input_output
+	• Getting started with C# !
+
 
 ## Strings
-	• 04_Strings
+	• how to work with word and texts.
+
 
 ## Numbers
-	• 05_Numbers
-	• 05_Numbers2
-	• 05_Numbers3
+	• How to use number to calculate things.
+	• Demostrates the three main formats: int, double and decimal.	
 
-## Dates
-	• 06_Dates
-	• Dates are a data type
-	• Never compare dates as int, strings
-	• Beware of implicit input: Current culture, Timezone!
-	• Bad Example: 
-		if (DateTime.Now.ToString() == "01/01/2022 00:00:00")
-			Console.WriteLine("Happy new year");
-	• DateTime.UtcNow (without Timezone)
-	• Beware of ISO8601 Format
-	• Taking only the day and only the time out of a DateTime
+
+## Date and time
+	• Demonstrates the use of the popular "DateTime"
+	• How to work with dates, enter values, display them
+	• howto manipulate or calculate with them
 	• DateTimeOffset type
 	• https://www.youtube.com/watch?v=Y195oMMLlqM
 	• Sharing Date values:
@@ -34,50 +27,50 @@ This repository contains several demo programs from my C# Pro Course.
 	
 
 ## Lists and Arrays
-	• 07_Lists_and_arrays
+	• Demostrates how to work lists and arrays (multiple values of the same kind)
+
 
 ## Command line parameters
-	• 09_Command_line_parameters
+	• Demos how to use parameters, that are given to your program from the outside.
+
 
 ## Environment Variables
-	• 10_Environment_variables
+	• How to use values that are stored in the so-called "environment" of your computer.
+
 
 ## Files and Directories
-	• 11_files_and_directories
+	• how to use and create files and directories, from your computers' drive.
+
 
 ## OOP: Classes, Interfaces
-	• 12_Classes_and_interfaces (needed for DataBinding and more)
+	• Howto makeuse of object oriented "things": classes and interfaces.
+
 
 ## Delegates and Lambdas
-	• 13_Delegates_and_lambdas
-	• declare two methods Add and Subtract
-	• Then explain delegate: delegate int MathOp(int a, int b);
-	• New method: void CalculateAndPrint(int a, int b, MathOp f);
-	• call CalculateAndPrint, firstly with delegate:
-		CalculateAndPrint (3,4,Add);
-	• then convert the Add to a delegate:
-		CalculateAndPrint (3,4, int Add(int x, int y) { return x+y; }  );
-		CalculateAndPrint (3,4, int delegate(int x, int y) { return x+y; }  );
-		CalculateAndPrint (3,4, delegate(int x, int y) { return x+y; }  );
-	• The method becomes a delegate by deleting the return value andreplacing thename by the word 'delegate'
-	• Then convert to a lambda expression, and reduce further:
-		CalculateAndPrint (3,4, (int x, int y) => { return x+y; }  ); ("fat arrow")
-		CalculateAndPrint (3,4, (int x, int y) => x+y );
-		CalculateAndPrint (3,4, (x, y) => x+y ); (der Compiler findet die Typen selber heraus)
+	• Demonstrates how to make use of so-called "delegates" and "lambdas"
+	• You need this to understand LINQ in the next chapter
+	• "delegates" are special methods
 
-	• A lambda function is also only a delegate.
-	• The first "delegate" is a type definition for functions
-	• The second "delegate" is an "anonymous function". 
-	• Means that it doesn't have a name (the compile has one)
 	
 ## IEnumerable IQueryable IList LINQ
-	• 14_IEnumerable_IQueryable_IList_LINQ
-	• LINQ queries are important to understand more complex programs
+	• Demonstrates three important concepts: IEnumerable, IQueryable and IList
+	• Demonstrates the use of thepopular technique called LINQ (language integrated query)
 	• LINQ makes it easy to program common tasks
 	• LINQ is important for using databases
 	• LINQ makes programs better readable
-	• LINQ is a kind fo functional programming
 
 	
 ## Generics
-	•  15_Generics
+	•  Demonstrates how to handle multiple data types in one method.
+
+	
+## String formatting
+	•  Demonstrates how to format numbers, dates and times, convert them to strings and back.
+
+	
+## JSON serialization
+	•  How to use the popular JSON data format to save your class into a file and read it back.
+
+	
+## Exercise
+	•  Finally an exercise for you.

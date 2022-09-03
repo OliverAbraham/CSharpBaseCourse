@@ -1,51 +1,64 @@
-﻿using StringFormattingSpecial;
+﻿using System.Globalization;
 
-Console.WriteLine($"Zahlen:");
+Console.WriteLine($"String formatting and parsing:\n\n");
+
+Console.WriteLine(@"
+These are the three ways to format:
+  1. "" . . . {variable,Format} . . . ""    Example: Console.WriteLine($""{amount, N2}"");
+  2. string.Format(Format, variable)      Example: var text = string.Format(""N2"", amount);
+  3. variable.ToString(Format)            Example: var text = amount.ToString(""N2"");
+They are interchangeable.
+");
+
+
+Console.WriteLine($"\n\n\nNumbers:");
 decimal pi = 3.1415m;
-Console.WriteLine($"Linksbündig                      : |{pi,-10}|");
-Console.WriteLine($"Rechtsbündig führende Leerzeichen: |{pi,10}|");
-Console.WriteLine($"Rechtsbündig führende Nullen     : |{pi:0000000.00}|");
-decimal betrag = 1234.56m;
-Console.WriteLine($"Rechtsbündig Tausenderpunkte     : |{betrag,10:N2}|");
-Console.WriteLine($"Rechtsbündig Tsdpkt Vornullen    : |{betrag:000,000.00}|");
-int zahl = 1234;
-Console.WriteLine($"Hexadezimal                      : |{zahl:x}|");
-
-
-Console.WriteLine($"\nTexte:");
-var txt = "Beispiel";
-var langtxt = "BeispieltextLang";
-Console.WriteLine($"Linksbündig                      : |{txt,-10}|");
-Console.WriteLine($"Rechtsbündig                     : |{txt,10}|");
-Console.WriteLine($"Linksbündig mit Abschneiden      : |{langtxt.MaxLength(10):-10}|");
-Console.WriteLine($"Rechtsbündig mit Abschneiden     : |{langtxt.MaxLength(10):10}|");
-
-
-Console.WriteLine($"\nDatum und Uhrzeit:");
-var heute = DateTime.Now;
-Console.WriteLine($"Datum out of the box             : |{heute}|");
-Console.WriteLine($"kurzes Datumsformat              : |{heute:d}|");
-Console.WriteLine($"langes Datumsformat              : |{heute:D}|");
-Console.WriteLine($"kurzes Zeitformat                : |{heute:t}|");
-Console.WriteLine($"langes Zeitformat                : |{heute:T}|");
-Console.WriteLine($"komplett kurz                    : |{heute:f}|");
-Console.WriteLine($"komplett lang                    : |{heute:F}|");
-Console.WriteLine($"Individuell                      : |{heute:yyyy_MM_dd___HH_mm_ss}|");
-Console.WriteLine($"Timestamp-Format für Logs        : |{heute:yyyy-MM-dd HH:mm:ss fff}|");
+Console.WriteLine($"Left aligned                     : {pi,-10}");
+Console.WriteLine($"Right aligned leading blanks     : {pi,10}");
+Console.WriteLine($"Right aligned leading zeroes     : {pi:0000000.00}");
+decimal amount = 1234.56m;
+Console.WriteLine($"Right aligned thousand separators: {amount,10:N2}");
+Console.WriteLine($"Right aligned leading zeroes     : {amount:000,000.00}");
+int value = 1000;
+Console.WriteLine($"Hexadecimal                      : {value:x}");
 
 
 
+Console.WriteLine($"\n\n\nparsing numbers:");
+var myTextWithNumber = "12345.67";
+var format = new CultureInfo("en-EN");
+bool success = decimal.TryParse(myTextWithNumber, NumberStyles.AllowDecimalPoint, format, out decimal myAmount);
+Console.WriteLine($"Parsing '{myTextWithNumber}' resultet in '{myAmount}'");
 
-Console.WriteLine($"\nThese are the three variants of formatting:");
-Console.WriteLine("  - variant1: $\" . . . {variable,Format} . . . \"");
-Console.WriteLine("  - variant2: string.Format(Format, variable)");
-Console.WriteLine("  - variant3: variable.ToString(Format)");
 
-var variable = 1234567.89m;
-var format   = "N2";
 
-var variant1 = $" . . . {variable:N3} . . . ";
-var variant2 = string.Format("{0:N2}", variable);
-var variant3 = variable.ToString(format);
+Console.WriteLine($"\n\n\nStrings:");
+var txt = "Example";
+Console.WriteLine($"Left aligned                     : {txt,-10}");
+Console.WriteLine($"Right aligned                    : {txt,10}");
 
-Console.ReadKey();
+
+
+Console.WriteLine($"\n\n\nDate and time:");
+var now = DateTime.Now;
+Console.WriteLine($"Date out of the box              : {now}");
+Console.WriteLine($"Short date format                : {now:d}");
+Console.WriteLine($"Long date format                 : {now:D}");
+Console.WriteLine($"Short time format                : {now:t}");
+Console.WriteLine($"Long time format                 : {now:T}");
+Console.WriteLine($"Complete short                   : {now:f}");
+Console.WriteLine($"Complete long                    : {now:F}");
+Console.WriteLine($"Individual                       : {now:yyyy_MM_dd___HH_mm_ss}");
+Console.WriteLine($"Timestamp format for logs        : {now:yyyy-MM-dd HH:mm:ss fff}");
+
+
+
+Console.WriteLine($"\n\n\nparsing Dates and Times:");
+var myTextWithDate = "24.12.2000";
+var myDateFormat = new CultureInfo("en-EN");
+success = DateTime.TryParseExact(myTextWithDate, "dd.MM.yyyy", null, DateTimeStyles.None, out DateTime myDate);
+Console.WriteLine($"Parsing '{myTextWithDate}' resultet in '{myDate}'");
+
+var myTextWithTime = "11.22.33";
+success = DateTime.TryParseExact(myTextWithTime, "HH.mm.ss", null, DateTimeStyles.NoCurrentDateDefault, out DateTime myTime);
+Console.WriteLine($"Parsing '{myTextWithTime}'   resultet in '{myTime}'");
