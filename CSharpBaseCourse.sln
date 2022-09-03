@@ -29,22 +29,22 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11_files_and_directories", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12_Classes_and_interfaces", "12_Classes_and_interfaces\12_Classes_and_interfaces.csproj", "{2F0192B1-3BA5-4CC3-A97A-3A98192FF17D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "13_Delegates_and_lambdas", "13_Delegates_and_lambdas\13_Delegates_and_lambdas.csproj", "{2BB26CC1-E827-4639-A1C0-60606E47AC2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "14_Delegates_and_lambdas", "13_Delegates_and_lambdas\14_Delegates_and_lambdas.csproj", "{2BB26CC1-E827-4639-A1C0-60606E47AC2D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "14_IEnumerable_IQueryable_IList_LINQ", "14_IEnumerable_IQueryable_IList_LINQ\14_IEnumerable_IQueryable_IList_LINQ.csproj", "{880CCBE1-43BF-4CB0-9D47-92172B37EC78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "16_IEnumerable_IQueryable_IList_LINQ", "14_IEnumerable_IQueryable_IList_LINQ\16_IEnumerable_IQueryable_IList_LINQ.csproj", "{880CCBE1-43BF-4CB0-9D47-92172B37EC78}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "15_Generics", "15_Generics\15_Generics.csproj", "{76358158-AF32-4AB5-9939-E6CF8E62462C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "13_Generics", "15_Generics\13_Generics.csproj", "{76358158-AF32-4AB5-9939-E6CF8E62462C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{5998EA4A-6B8D-48D5-A3AC-3C30E5FB866D}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "16_String_formatting", "16_String_formatting\16_String_formatting.csproj", "{B692E37A-3C11-4C98-A5C8-6B8ED93344B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "15_String_formatting_and_extension_Methods", "16_String_formatting\15_String_formatting_and_extension_Methods.csproj", "{B692E37A-3C11-4C98-A5C8-6B8ED93344B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17_JSON_Serialization", "17_JSON_Serialization\17_JSON_Serialization.csproj", "{68E3FD48-A3D5-4C92-BB5F-3EA9E69DB8A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "17_JSON_Serialization", "17_JSON_Serialization\17_JSON_Serialization.csproj", "{68E3FD48-A3D5-4C92-BB5F-3EA9E69DB8A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "18_Calender_Exercise", "18_Calender_Exercise\18_Calender_Exercise.csproj", "{B72DCDB1-B614-4FAC-891F-1600C8F20402}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "18_Calender_Exercise", "18_Calender_Exercise\18_Calender_Exercise.csproj", "{B72DCDB1-B614-4FAC-891F-1600C8F20402}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

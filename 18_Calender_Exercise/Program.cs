@@ -6,8 +6,49 @@
 
         static void Main(string[] args)
         {
-            PrintYear(2018);
-            Console.ReadKey();
+            var year = DateTime.Now.Year;
+            if (args.Any())
+                year = Convert.ToInt32(args[0]);
+            if (args.GetLength(0) > 1)
+			{
+                var month = Convert.ToInt32(args[1]);
+			    Console.WriteLine($"This is month {month} of year {year}");
+                PrintMonth(year, month);
+			}
+            else
+			{
+			    Console.WriteLine($"This is year {year}");
+                PrintYear(year);
+			}
+        }
+
+        static void PrintYear(int year)
+        {
+            Print3Months(year,1);
+            Print3Months(year,4);
+            Print3Months(year,7);
+            Print3Months(year,10);
+        }
+
+        static void Print3Months(int year, int month)
+        {
+            var Values1 = FormatMonth(GenerateMonthCalendarValues(year, month));
+            var Values2 = FormatMonth(GenerateMonthCalendarValues(year, month+1));
+            var Values3 = FormatMonth(GenerateMonthCalendarValues(year, month+2));
+            for(int i=0; i < Values1.GetLength(0); i++)
+            {
+                Console.Write(Values1[i]);
+                Console.Write(Values2[i]);
+                Console.Write(Values3[i]);
+                Console.WriteLine();
+            }
+        }
+
+        static void PrintMonth(int year, int month)
+        {
+            var Values = FormatMonth(GenerateMonthCalendarValues(year, month));
+            foreach(var Value in Values)
+                Console.WriteLine(Value);
         }
 
         static int[,] GenerateMonthCalendarValues(int year, int month)
@@ -56,35 +97,6 @@
             }
             Rows[row] = "";
             return Rows;
-        }
-
-        static void PrintMonth(int year, int month)
-        {
-            var Values = FormatMonth(GenerateMonthCalendarValues(year, month));
-            foreach(var Value in Values)
-                Console.WriteLine(Value);
-        }
-
-        static void Print3Months(int year, int month)
-        {
-            var Values1 = FormatMonth(GenerateMonthCalendarValues(year, month));
-            var Values2 = FormatMonth(GenerateMonthCalendarValues(year, month+1));
-            var Values3 = FormatMonth(GenerateMonthCalendarValues(year, month+2));
-            for(int i=0; i < Values1.GetLength(0); i++)
-            {
-                Console.Write(Values1[i]);
-                Console.Write(Values2[i]);
-                Console.Write(Values3[i]);
-                Console.WriteLine();
-            }
-        }
-
-        static void PrintYear(int year)
-        {
-            Print3Months(year,1);
-            Print3Months(year,4);
-            Print3Months(year,7);
-            Print3Months(year,10);
         }
     }
 }
