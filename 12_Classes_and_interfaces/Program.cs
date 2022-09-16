@@ -8,7 +8,7 @@ Console.WriteLine($"All Persons: {string.Join(' ', persons)}\n\n");  // this doe
 
 
 Console.WriteLine($"Hey persons, say something!");
-foreach (var person in persons)
+foreach (IPerson person in persons)
 	person.DoSomething();
 
 
