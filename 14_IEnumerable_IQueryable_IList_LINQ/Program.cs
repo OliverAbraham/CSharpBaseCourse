@@ -1,6 +1,8 @@
 ﻿
 // LINQ means "Language INtegrated Query"
 
+// -------------------- CREATING SAMPLE DATA --------------------
+
 List<Person> myList = new List<Person>
 {
 	new Person("Keith", "Richards"),
@@ -9,48 +11,95 @@ List<Person> myList = new List<Person>
 };
 
 
-// -------------------- SELECTION --------------------
+// -------------------- PRINTING OUT THE WHOLE LIST --------------------
 
-Console.WriteLine($"the complete List:              : {myList}");
-Console.WriteLine($"the complete List:              : {string.Join(", ", myList.ToString())}");
+// we want to print the list:
+Console.WriteLine($"this doesn't work               : {myList}");
+Console.WriteLine($"this doesn't work either        : {string.Join(", ", myList)}");
+Console.WriteLine($"this doesn't work either sorry  : {string.Join(", ", myList.ToString())}");
 
+// we print the list in an old fashioned way (we dont wanna do this anymore!)
+// I have created a method for this:
+WriteListOfPersons("The whole list                  : ", myList);
+Console.WriteLine();
+Console.WriteLine();
+
+
+
+
+// -------------------- SELECTING PROPERTIES OUT OF EACH ELEMENT --------------------
+// We use the "Select" method to go through all list elements and fetch a part
 // to use LINQ operators, we have to use lambda expressions:
 
 var firstNames = myList.Select(x => x.FirstName);
 Console.WriteLine($"only the first Names            : {string.Join(", ", firstNames)}");
 
-var firstNames2 = myList.Select(x => x.FirstName).ToList();
-Console.WriteLine($"only the first Names            : {string.Join(", ", firstNames2)}");
+var lastNames = myList.Select(x => x.LastName);
+Console.WriteLine($"only the last Names             : {string.Join(", ", lastNames)}");
 
 
-var firstAndLastNames = myList.Select(x => x.FirstName + x.LastName).ToList();
-Console.WriteLine($"first and last names            : {string.Join(", ", firstAndLastNames)}");
 
-// select persons with last name starting with a p:
+
+// -------------------- DOING SOME STUFF WITH THE ELEMENTS --------------------
+
+var combineFirstAndLastNames = myList.Select(x => x.FirstName + x.LastName);
+Console.WriteLine($"combine first and last names    : {string.Join(", ", combineFirstAndLastNames)}");
+
+
+
+
+// -------------------- FILTERING THE ELEMENTS --------------------------------
+
+// select certain elements
+var allPresleys = myList.Where(x => x.LastName == "Presley");
+WriteListOfPersons("allPresleys                     : ", allPresleys);
+
+// select only one element
+var thePresley = myList.Where(x => x.LastName == "Presley").FirstOrDefault();
+WritePerson("thePresley                      : ", thePresley);
+
+// when I'm sure I will find it
+var theOnlyPresley = myList.Where(x => x.LastName == "Presley").First();
+WritePerson($"my only Presley                 : ", theOnlyPresley);
+
+// select persons with a certain criteria:
 var namesStartingWithP = myList.Where(x => x.LastName.StartsWith("P")).Select(x => x.LastName);
 Console.WriteLine($"last names starting with a p    : {string.Join(", ", namesStartingWithP)}");
 
-// select very long names:
+// select persons with a certain criteria:
 var longNames = myList.Where(x => x.LastName.Length > 7).Select(x => x.LastName);
 Console.WriteLine($"very long names                 : {string.Join(", ", longNames)}");
 
 
 
-// -------------------- SORTING ----------------------
+
+// -------------------- CHECKING IF I HAVE A CERTAIN ELEMENT ------------------
+
+var doIHaveAPresley = myList.Any(x => x.LastName == "Presley");
+Console.WriteLine($"Do I have a Presley ?           : {string.Join(", ", doIHaveAPresley)}");
+
+
+
+
+// -------------------- SORTING -----------------------------------------------
 
 // sort by first name:
 var sortedByFirstname = myList.OrderBy(x => x.FirstName).ToList();
+WriteListOfPersons($"sortedByFirstname               : ", sortedByFirstname);
 
-// sort by last name:
-var sortedByLastName = myList.OrderBy(x => x.LastName).Select(x => x.FirstName + x.LastName).ToList();
 
-Console.WriteLine($"sortedByFirstname               : {string.Join(", ", sortedByFirstname)}");
+
+
+// -------------------- COMBINING LINQ OPERATORS ------------------------------
+
+
+// sort by last name but only take the first name:
+var sortedByLastName = myList.OrderBy(x => x.LastName).Select(x => x.FirstName).ToList();
 Console.WriteLine($"sortedByLastName                : {string.Join(", ", sortedByLastName)}");
 
 
 
-
-// -------------------- AGGREGATION ----------------------
+// -------------------- AGGREGATION -------------------------------------------
 
 List<Person> newList = new List<Person>
 {
@@ -63,7 +112,7 @@ Console.WriteLine($"combined lists                  : {string.Join(", ", combine
 
 
 
-// -------------------- SEARCHING -------------------------
+// -------------------- SEARCHING ---------------------------------------------
 
 // find the element with A:
 var theElementWithA = myList.FirstOrDefault(x => x.FirstName.StartsWith("A"));
@@ -91,7 +140,7 @@ Console.WriteLine(    $"is my list empty?               : {!myList.Any()}");
 
 
 
-// -------------------- INTERSECTION -----------------------
+// -------------------- INTERSECTION ------------------------------------------
 
 // find the elements that have the same last name in both lists:
 var sameElementsInBothLists = (from x in myList 
@@ -108,4 +157,25 @@ var sameElementsInBothLists2 = (from x in myList
 							   .ToList();
 Console.WriteLine(    $"same last name in both lists    : {string.Join(", ", sameElementsInBothLists2.Select(x => x.FirstName + x.LastName))}");
 
+
+
+
+
+
+
+
+void WriteListOfPersons(string text, IEnumerable<Person> myList)
+{
+	Console.Write(text);
+	foreach (var person in myList)
+		Console.Write(person.FirstName + " " + person.LastName + ",");
+	Console.WriteLine();
+}
+
+void WritePerson(string text, Person oneElement)
+{
+	Console.Write(text);
+	Console.Write(oneElement.FirstName + " " + oneElement.LastName);
+	Console.WriteLine();
+}
 

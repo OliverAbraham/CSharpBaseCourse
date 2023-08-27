@@ -7,4 +7,14 @@
 		FirstName = firstName;
 		LastName = lastName;
 	}
+
+    //public override string ToString()
+    //{
+    //    return FirstName + " " + LastName;
+    //}
+
+    //public override string ToString()
+    //{
+    //    return FirstName;
+    //}
 }

@@ -27,6 +27,23 @@ Console.WriteLine($"myFirstList             : {string.Join('*', myFirstList)}");
 Console.WriteLine($"mySecondList            : {string.Join('*', mySecondList)}");
 myFirstList.Add("hurray");
 
+// CONSTRUCTING LISTS
+
+List<string> myThirdList = new List<string>();
+myThirdList.Add("tick");
+myThirdList.Add("trick");
+myThirdList.Add("track");
+
+
+// SHORTER FORMS
+
+var myFourthList = new List<string>();
+List<string> myFifthList = new();
+
+
+
+// COMBINING LISTS
+
 // you won't do this:
 //var bothLists = mySecondList.Concat(myFirstList).ToArray();
 // you want to do this:
@@ -39,15 +56,25 @@ Console.WriteLine($"Both lists together     : {string.Join('*', completeList)}")
 Console.WriteLine("\n\n\n");
 
 
+// SORTING (BETTER WAYS LATER WITH LINQ)
+
 completeList.Sort();
 Console.WriteLine($"Sortedlist (sorted with extension method)    : {string.Join('*', completeList)}");
 Console.WriteLine("\n");
+
+
+
+// WORKING WITH THE ELEMENTS
 
 Console.Write($"Enumerating the list                         : ");
 foreach(var item in completeList) Console.Write($"{item}! ");
 Console.WriteLine("\n");
 
-myFirstList[0] = "Hallo";
-//myFirstList.RemoveAt()
-//myFirstList.Insert();
+
+
+// CHANGING ITEMS, INSERTING, REMOVING, CLEARING
+
+myFirstList[0] = "Peter";
+myFirstList.RemoveAt(0);
+myFirstList.Insert(1, "gustav");
 myFirstList.Clear();
