@@ -28,22 +28,46 @@ Console.WriteLine();
 
 
 // -------------------- SELECTING PROPERTIES OUT OF EACH ELEMENT --------------------
-// We use the "Select" method to go through all list elements and fetch a part
+
+// We use the "Select" method from the "LINQ" technology to go through all list elements and fetch a part out of every element
 // to use LINQ operators, we have to use lambda expressions:
+// remember:
+// a lambda expression is something that has a fat arrow and something left and right, like this:
+// (a,b) => a+b
+// the form we are using here is:
+// x => x.SOMETHING
+// x represents the current list element, and SOMETHING a property of the list element (Person here)
 
 var firstNames = myList.Select(x => x.FirstName);
 Console.WriteLine($"only the first Names            : {string.Join(", ", firstNames)}");
 
-var lastNames = myList.Select(x => x.LastName);
-Console.WriteLine($"only the last Names             : {string.Join(", ", lastNames)}");
+// what is happening?
+// the Select method calls the lambda for every list element
+// then takes the return values of the lambda and builds a new list out of them.
+
+
+// we also could write this without a lambda (dont do it, just for demo!!!)
+firstNames = myList.Select(PickOutTheFirstNameOfAnElement);
+
+string PickOutTheFirstNameOfAnElement(Person element)
+{
+    return element.FirstName;
+}
 
 
 
 
 // -------------------- DOING SOME STUFF WITH THE ELEMENTS --------------------
 
-var combineFirstAndLastNames = myList.Select(x => x.FirstName + x.LastName);
-Console.WriteLine($"combine first and last names    : {string.Join(", ", combineFirstAndLastNames)}");
+var lastNames = myList.Select(x => x.LastName);
+Console.WriteLine($"only the last Names             : {string.Join(", ", lastNames)}");
+
+var lengths = myList.Select(x => x.LastName.Length);
+Console.WriteLine($"Lengths of the last names       : {string.Join(", ", lengths)}");
+
+var combineThings = myList.Select(x => x.FirstName + x.LastName);
+Console.WriteLine($"combine first and last names    : {string.Join(", ", combineThings)}");
+
 
 
 
@@ -84,7 +108,7 @@ Console.WriteLine($"Do I have a Presley ?           : {string.Join(", ", doIHave
 // -------------------- SORTING -----------------------------------------------
 
 // sort by first name:
-var sortedByFirstname = myList.OrderBy(x => x.FirstName).ToList();
+var sortedByFirstname = myList.OrderBy(x => x.FirstName);
 WriteListOfPersons($"sortedByFirstname               : ", sortedByFirstname);
 
 
