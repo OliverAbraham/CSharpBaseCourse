@@ -1,6 +1,19 @@
 # CSharpBaseCourse example code
 
+![](https://img.shields.io/github/downloads/oliverabraham/CSharpBaseCourse/total) ![](https://img.shields.io/github/license/oliverabraham/CSharpBaseCourse) ![](https://img.shields.io/github/languages/count/oliverabraham/CSharpBaseCourse) ![GitHub Repo stars](https://img.shields.io/github/stars/oliverabraham/CSharpBaseCourse?label=repo%20stars) ![GitHub Repo stars](https://img.shields.io/github/stars/oliverabraham?label=user%20stars)
+
+
+# OVERVIEW
+
 This repository contains several demo programs from my C# Base Course.
+Even without my course, you can use this repository to learn C#.
+
+
+
+
+
+# Chapters
+
 
 ## Hello World
 	• Getting started with C# !
@@ -74,3 +87,48 @@ This repository contains several demo programs from my C# Base Course.
 	
 ## Exercise
 	•  Finally an exercise for you.
+
+
+
+
+
+## License
+
+Licensed under Apache licence.
+https://www.apache.org/licenses/LICENSE-2.0
+
+
+## Compatibility
+
+The nuget package was build with DotNET 6.
+
+
+
+## AUTHOR
+
+Oliver Abraham, mail@oliver-abraham.de, https://www.oliver-abraham.de
+
+Please feel free to comment and suggest improvements!
+
+
+
+## SOURCE CODE
+
+The source code is hosted at:
+
+https://github.com/OliverAbraham/Abraham.Office
+
+The Nuget Package is hosted at: 
+
+https://www.nuget.org/packages/Abraham.Office
+
+
+
+## SCREENSHOTS
+
+
+# MAKE A DONATION !
+If you find this application useful, buy me a coffee!
+I would appreciate a small donation on https://www.buymeacoffee.com/oliverabraham
+
+<a href="https://www.buymeacoffee.com/app/oliverabraham" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
